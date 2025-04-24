@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blooming Haven - Flower Shop</title>
+    
+    <!-- Required Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="user.css">
+    <script src="user.js" defer></script>
+</head>
+<body>
+    
+    <header class="header">
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+        <a dir="ltr" href="" class="logo">Abaq عَـــبَـــق</a>
+        <nav class="navbar">
+            <a href="http://127.0.0.1:5501/home.html">Home</a>
+            <a href="#about">About us</a>
+            <a href="#products">Shop</a>
+            <a href="#bigimgs">Services</a>
+            <a href="#">Account </a>
+        </nav>
+
+        <div class="icons">
+            <div class="bi bi-house fas fa-search" id="search-btn"></div>
+            <div class="bi bi-house fa fa-heart" id="heart-btn"></div>
+            <div class="bi bi-house fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="bi bi-house fa fa-user" id="user-btn"></div>
+        </div>
+
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="search...">
+            <label for="search-box" class="fas fa-search"></label>
+        </div>
+
+    </header>
+    <!-- النهاية -->
+
+    <!-- Enhanced Sidebar -->
+    <nav class="sidebar">
+        <div class="sidebar__header">
+            <h1 class="sidebar__title">
+                <i class="fas fa-spa"></i>
+                <span>Abaq عَـــبَـــق</span>
+            </h1>
+        </div>
+        
+        <ul class="sidebar__nav">
+            <li class="sidebar__item">
+                <a href="#profile" class="sidebar__link active">
+                    <i class="fas fa-user-circle"></i>
+                    <span>User Profile</span>
+                </a>
+            </li>
+            <li class="sidebar__item">
+                <a href="#wishlist" class="sidebar__link">
+                    <i class="fas fa-heart"></i>
+                    <span>Wishlist</span>
+                </a>
+            </li>
+            <li class="sidebar__item">
+                <a href="#cart" class="sidebar__link">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Cart </span>
+                </a>
+            </li>
+            <li class="sidebar__item">
+                <a href="#orders" class="sidebar__link">
+                    <i class="fas fa-box"></i>
+                    <span>Orders </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+        <div class="content-wrapper">
+            <!-- Profile Section -->
+            <section id="profile" class="content__section active">
+                <h2 class="section-title"><i class="fas fa-user"></i> User Profile</h2>
+                <div class="profile-card">
+                    <img src="profile.jpg" class="profile-pic" alt="Profile Picture">
+                    <div class="profile-info"> 
+                        <h3>Tamara Flowers</h3>
+                        <div class="profile-details">
+                            <div class="profile-detail">
+                                <i class="fas fa-envelope"></i>
+                                Tamara@gmail.com
+                            </div>
+                            <div class="profile-detail">
+                                <i class="fas fa-phone"></i>
+                                +053 456 789
+                            </div>
+                            <div class="profile-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                154 Flower Street, Ramallah
+                            </div>
+                        </div>
+                        <button class="edit-btn">Edit Profile</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Wishlist Section -->
+            <section id="wishlist" class="content__section">
+                <h2 class="section-title"><i class="fas fa-heart"></i> Wishlist</h2>
+                <div class="wishlist-grid" id="wishlist-items">
+                    <div class="flower-card">
+                        <img src="red1.jpg" class="flower-img" alt="Rose Bouquet">
+                        <div class="flower-info">
+                            <div>
+                                <h3>Premium Red Roses</h3>
+                                <div class="flower-meta">
+                                    <span class="price">$29.99</span>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i> 4.8
+                                    </div>
+                                </div>
+                                <h6>12 fresh red roses paired with delicate baby’s breath a timeless expression of love and elegance.</h6>
+                            </div>
+                            <div class="flower-actions">
+                                <button class="add-to-cart">Add to Cart</button>
+                                <button class="remove-item" >Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wishlist-grid">
+                    <div class="flower-card">
+                        <img src="pink3.jpg" class="flower-img" alt="Rose Bouquet">
+                        <div class="flower-info">
+                            <div>
+                                <h3>Blush Pink Peonies</h3>
+                                <div class="flower-meta">
+                                    <span class="price">$29.99</span>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i> 4.9
+                                    </div>
+                                </div>
+                                <h6>7 Soft pink peonies symbolizing grace and romance, perfect for heartfelt moments.</h6>
+                            </div>
+                            <div class="flower-actions">
+                                <button class="add-to-cart">Add to Cart</button>
+                                <button class="remove-item" >Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wishlist-grid">
+                    <div class="flower-card">
+                        <img src="توليب.jpg" class="flower-img" alt="Rose Bouquet">
+                        <div class="flower-info">
+                            <div>
+                                <h3>Tulip Whisper</h3>
+                                <div class="flower-meta">
+                                    <span class="price">$37.99</span>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i> 3.9
+                                    </div>
+                                </div>
+                                <h6>20 A gentle mix of seasonal tulips offering elegance in every petal.</h6>
+                            </div>
+                            <div class="flower-actions">
+                                <button class="add-to-cart">Add to Cart</button>
+                                <button class="remove-item" >Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wishlist-grid">
+                    <div class="flower-card">
+                        <img src="spr1.jpg" class="flower-img" alt="Rose Bouquet">
+                        <div class="flower-info">
+                            <div>
+                                <h3> Spring Harmony</h3>
+                                <div class="flower-meta">
+                                    <span class="price">$49.99</span>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i> 5
+                                    </div>
+                                </div>
+                                <h6>10 A seasonal blend of fresh blooms capturing the spirit of renewal and joy.</h6>
+                            </div>
+                            <div class="flower-actions">
+                                <button class="add-to-cart">Add to Cart</button>
+                                <button class="remove-item" >Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+
+            <!-- Cart Section -->
+            <section id="cart" class="content__section">
+                <h2 class="section-title"><i class="fas fa-shopping-cart"></i> Shopping Cart</h2>
+                <div class="cart-item">
+                    <img src="sun3.jpg" class="flower-img" alt="Sunflowers">
+                    <div class="flower-info">
+                        <div>
+                            <h3>Sunflower Arrangement</h3>
+                            <div class="flower-meta">
+                                <span class="price">$79.99</span>
+                                <div class="quantity-control">
+                                    <button class="qty-btn">-</button>
+                                    <input type="number" value="2" min="1">
+                                    <button class="qty-btn">+</button>
+                                </div>
+                            </div>
+                            <h6>Seasonal sunflower bouquet with greens radiating warmth and joy</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-details">
+                        <p>Subtotal: $159.98</p>
+                        <p>Shipping: $15.00</p>
+                        <p class="total">Total: $174.98</p>
+                    </div>
+                    <button class="checkout-btn" style="font-size: 1.4rem;">Proceed to Checkout</button>
+                </div>
+                <div class="cart-item">
+                    <img src="pla.jpg" class="flower-img" alt="Sunflowers">
+                    <div class="flower-info">
+                        <div>
+                            <h3>Petal Poetry</h3>
+                            <div class="flower-meta">
+                                <span class="price">$31.99</span>
+                                <div class="quantity-control">
+                                    <button class="qty-btn">-</button>
+                                    <input type="number" value="1" min="1">
+                                    <button class="qty-btn">+</button>
+                                </div>
+                            </div>
+                            <h6>A dreamy mix of seasonal flowers for tender, heartfelt moments.</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-details">
+                        <p>Subtotal: $31.99</p>
+                        <p>Shipping: $15.00</p>
+                        <p class="total">Total: $46.99</p>
+                    </div>
+                    <button class="checkout-btn" style="font-size: 1.4rem;">Proceed to Checkout</button>
+                </div>
+                <div class="cart-item">
+                    <img src="lay.jpg" class="flower-img" alt="Sunflowers">
+                    <div class="flower-info">
+                        <div>
+                            <h3>Lily Grace</h3>
+                            <div class="flower-meta">
+                                <span class="price">$59.99</span>
+                                <div class="quantity-control">
+                                    <button class="qty-btn">-</button>
+                                    <input type="number" value="0" min="1">
+                                    <button class="qty-btn">+</button>
+                                </div>
+                            </div>
+                            <h6>Elegant white lilies offering serenity and charm in every bloom.</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-details">
+                        <p>Subtotal: $59.98</p>
+                        <p>Shipping: $15.00</p>
+                        <p class="total">Total: $74.98</p>
+                    </div>
+                    <button class="checkout-btn" style="font-size: 1.4rem;">Proceed to Checkout</button>
+                </div>
+            </section>
+
+            <!-- Orders Section -->
+            <section id="orders" class="content__section">
+                <h2 class="section-title"><i class="fas fa-box"></i> Order History</h2>
+                <div class="order-timeline">
+                    <div class="order-card">
+                        <div class="order-header">
+                            <h3>Wedding Bouquet</h3>
+                            <span class="order-status">Delivered</span>
+                        </div>
+                        <div class="order-details">
+                            <p>Order Date: 2024-05-15</p>
+                            <p>Total: $499.99</p>
+                            <p> item count: 50 </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-timeline">
+                    <div class="order-card">
+                        <div class="order-header">
+                            <h3>Eternal Bloom</h3>
+                            <span class="order-status">Delivered</span>
+                        </div>
+                        <div class="order-details">
+                            <p>Order Date: 2024-06-18</p>
+                            <p>Total: $399.99</p>
+                            <p> item count: 40 </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+
+        document.querySelectorAll('.sidebar__link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetSection = document.querySelector(this.getAttribute('href'));
+                
+                document.querySelectorAll('.sidebar__link, .content__section').forEach(el => {
+                    el.classList.remove('active');
+                });
+
+                this.classList.add('active');
+                
+                setTimeout(() => {
+                    targetSection.classList.add('active');
+                }, 50);
+            });
+        });
+        document.querySelector('.edit-btn').addEventListener('click', () => {
+            Swal.fire({
+                title: 'Edit Profile',
+                html: `
+                    <input type="text" class="swal2-input" placeholder="Name" value="Tamara Flowers">
+                    <input type="email" class="swal2-input" placeholder="Email" value="Tamara@blooming.com">
+                    <input type="tel" class="swal2-input" placeholder="Phone" value="+053 456 789">
+                `,
+                showCancelButton: true,
+                confirmButtonColor: '#73b080',
+                background: '#fff9fb'
+            });
+        });
+
+       
+        document.querySelectorAll('.qty-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const input = btn.parentElement.querySelector('input');
+                let value = parseInt(input.value);
+                btn.textContent === '-' ? input.value = Math.max(1, value - 1) : input.value = value + 1;
+            });
+        });
+
+        document.querySelector("#search-btn").onclick = () => { 
+    searchForm.classList.toggle("active")
+    navbar.classList.remove("active");
+    cartItems.classList.remove("active");
+};
+
+let navbar = document.querySelector(".navbar");
+
+document.querySelector("#menu-btn").onclick = () => { 
+    navbar.classList.toggle("active");
+    searchForm.classList.remove("active");
+    cartItems.classList.remove("active")
+};
+document.addEventListener('DOMContentLoaded', () => {
+    const loadWishlist = () => {
+        const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        const container = document.getElementById('wishlist-items');
+        container.innerHTML = '';
+        
+        wishlist.forEach(product => {
+            container.innerHTML += `
+                <div class="product">
+                    <div class="img">
+                        <img src="${product.image}" />
+                        <div class="bar">
+                            <i class="fa-solid fa-heart wishlist-btn active"></i>
+                            <a href="#" class="add-to-cart">Add To Cart</a>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <h3>${product.name}</h3>
+                        <p class="price">$${product.price}</p>
+                    </div>
+                </div>
+            `;
+        });
+    };
+    
+    loadWishlist();
+});
+
+    </script>
+</body>
+</html>
