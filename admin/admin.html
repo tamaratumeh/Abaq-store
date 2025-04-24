@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="admincss.css">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="admin.js" defer></script>
+
+</head>
+
+<body>
+
+    <!--بداية شريط العنوان ,لوغو,لينك  -->
+
+    <header class="header">
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+        <a dir="ltr" href="" class="logo">Abaq عَـــبَـــق</a>
+        <nav class="navbar">
+            <a href="http://127.0.0.1:5501/home.html">Home</a>
+            <a href="#about">About us</a>
+            <a href="#products">Shop</a>
+            <a href="#bigimgs">Services</a>
+            <a href="#">Account </a>
+        </nav>
+
+        <div class="icons">
+            <div class="bi bi-house fas fa-search" id="search-btn"></div>
+            <div class="bi bi-house fa fa-heart" id="heart-btn"></div>
+            <div class="bi bi-house fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="bi bi-house fa fa-user" id="user-btn"></div>
+        </div>
+
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="search...">
+            <label for="search-box" class="fas fa-search"></label>
+        </div>
+
+    </header>
+    <!-- النهاية -->
+
+    <div class="sidebar">
+        <h2 style="margin-bottom: 30px; color: var(--primary-color);">
+            Dashboard
+        </h2>
+        <nav>
+            <button onclick="showSection('products')">
+                <i class="fas fa-box-open icon"></i> Products
+            </button>
+            <button onclick="showSection('orders')">
+                <i class="fas fa-shipping-fast icon"></i> Orders
+            </button>
+            <button onclick="showSection('users')">
+                <i class="fas fa-users icon"></i> Users
+            </button>
+            <button onclick="showSection('reports')">
+                <i class="fas fa-chart-bar icon"></i> Reports
+            </button>
+        </nav>
+    </div>
+
+    <div class="content">
+        <!-- Products Section -->
+        <div id="products" class="content-section active-section">
+            <h2 data-aos="fade-right"><i class="fas fa-box-open"></i> Product Management</h2>
+            <button class="btn btn-primary" data-aos="zoom-in" onclick="showAddProduct()">
+                <i class="fas fa-plus"></i> Add New Product
+            </button>
+            <table style="margin-top: 20px;" data-aos="fade-up">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="1249b777-a166-47e8-9c84-3de59eaa9b26.jpg" width="50"></td>
+                        <td>Premium Smart Watch</td>
+                        <td>$19.99</td>
+                        <td>25</td>
+                        <td>
+                            <button class="btn btn-primary">
+                                <i class="fas fa-edit"></i> Edit
+                            </button>
+                            <button class="btn btn-success delete-btn">
+                                <i class="fas fa-trash"></i> Delete
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- Additional product rows -->
+                    <tr>
+                        <td><img src="The Best Fake and Silk Flowers to Set the Tone in Your Space.jpg" width="50"></td>
+                        <td>Wireless Bluetooth Headphones</td>
+                        <td>$14.99</td>
+                        <td>18</td>
+                        <td>
+                            <button class="btn btn-primary">
+                                <i class="fas fa-edit"></i> Edit
+                            </button>
+                            <button class="btn btn-success delete-btn">
+                                <i class="fas fa-trash"></i> Delete
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="download.jpg" width="50"></td>
+                        <td>4K Digital Camera</td>
+                        <td>$39.00</td>
+                        <td>10</td>
+                        <td>
+                            <button class="btn btn-primary">
+                                <i class="fas fa-edit"></i> Edit
+                            </button>
+                            <button class="btn btn-success delete-btn">
+                                <i class="fas fa-trash"></i> Delete
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Orders Section -->
+        <div id="orders" class="content-section">
+            <h2 data-aos="fade-right"><i class="fas fa-shipping-fast"></i> Order Management</h2>
+            <table data-aos="fade-up">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#1234</td>
+                        <td>John Doe</td>
+                        <td>$29.99</td>
+                        <td>
+                            <select class="btn">
+                                <option>Processing</option>
+                                <option>Shipped</option>
+                                <option>Completed</option>
+                            </select>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary">
+                                <i class="fas fa-info-circle"></i> Details
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- Additional order rows -->
+                    <tr>
+                        <td>#1235</td>
+                        <td>Jane Smith</td>
+                        <td>$40.00</td>
+                        <td>
+                            <select class="btn">
+                                <option>Shipped</option>
+                                <option>Processing</option>
+                                <option>Completed</option>
+                            </select>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary">
+                                <i class="fas fa-info-circle"></i> Details
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#1236</td>
+                        <td>Mike Johnson</td>
+                        <td>$19.99</td>
+                        <td>
+                            <select class="btn">
+                                <option>Completed</option>
+                                <option>Processing</option>
+                                <option>Shipped</option>
+                            </select>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary">
+                                <i class="fas fa-info-circle"></i> Details
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Users Section -->
+        <div id="users" class="content-section">
+            <h2 data-aos="fade-right"><i class="fas fa-users"></i> User Management</h2>
+            <table data-aos="fade-up">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tamara tumeh</td>
+                        <td>tamaratumeh@example.com</td>
+                        <td>Active</td>
+                        <td>
+                            <button class="btn btn-success">
+                                <i class="fas fa-ban"></i> Ban
+                            </button>
+                            <button class="btn btn-primary">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- Additional user rows -->
+                    <tr>
+                        <td>noor</td>
+                        <td>noor@example.com</td>
+                        <td>Banned</td>
+                        <td>
+                            <button class="btn btn-success">
+                                <i class="fas fa-check"></i> Unban
+                            </button>
+                            <button class="btn btn-primary">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ruba</td>
+                        <td>ruba@example.com</td>
+                        <td>Active</td>
+                        <td>
+                            <button class="btn btn-success">
+                                <i class="fas fa-ban"></i> Ban
+                            </button>
+                            <button class="btn btn-primary">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Reports Section -->
+        <div id="reports" class="content-section">
+            <h2 data-aos="fade-right"><i class="fas fa-chart-bar"></i> Sales Reports</h2>
+            <div class="stats-container">
+                <div class="stat-box" data-aos="zoom-in">
+                    <h3>Daily Sales</h3>
+                    <p>$1,234</p>
+                    <i class="fas fa-coins fa-2x" style="color: var(--primary-color);"></i>
+                </div>
+                <div class="stat-box" data-aos="zoom-in" data-aos-delay="200">
+                    <h3>Monthly Sales</h3>
+                    <p>$12,345</p>
+                    <i class="fas fa-chart-line fa-2x" style="color: var(--secondary-color);"></i>
+                </div>
+                <div class="stat-box" data-aos="zoom-in" data-aos-delay="400">
+                    <h3>Annual Sales</h3>
+                    <p>$14,678</p>
+                    <i class="fas fa-dollar-sign fa-2x" style="color: var(--primary-color);"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- قسم إضافة المنتج -->
+    <div id="addProductSection" class="add-product-section">
+        <div class="back-button" onclick="closeAddForm() ">
+            <i class="fas fa-arrow-left"></i>
+            <span>Back to Products</span>
+        </div>
+
+        <h2><i class="fas fa-plus"></i> Add New Product</h2>
+
+        <form id="productForm">
+            <div class="form-group">
+                <label><i class="fas fa-box-open"></i> Product Name</label>
+                <input type="text" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fas fa-dollar-sign"></i> Price</label>
+                <input type="number" class="form-input" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fas fa-cubes"></i> Stock</label>
+                <input type="number" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fas fa-image"></i> Product Image</label>
+                <input type="file" class="form-input" accept="image/*">
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn btn-success" onclick="addProduct()">
+                    <i class="fas fa-save"></i> Save Product
+                </button>
+                <button type="button" class="btn btn-primary" onclick="closeAddForm() ">
+                    <i class="fas fa-times"></i> Cancel
+                </button>
+            </div>
+        </form>
+    </div>
+
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        function showAddForm() {
+            // إخفاء قسم المنتجات
+            document.getElementById('products').style.display = 'none';
+            document.getElementById('products').classList.remove('active-section');
+
+            // إظهار نموذج الإضافة
+            document.getElementById('addProductSection').style.display = 'block';
+        }
+
+        function closeAddForm() {
+            // إخفاء نموذج الإضافة
+            document.getElementById('addProductSection').style.display = 'none';
+
+            // إظهار قسم المنتجات
+            const productsSection = document.getElementById('products');
+            productsSection.style.display = 'block';
+            productsSection.classList.add('active-section');
+
+            // إذا كنت تستخدم مكتبة AOS
+            if (typeof AOS !== 'undefined') {
+                AOS.refresh();
+            }
+        }
+        // دالة واحدة لـ showSection
+        function showSection(sectionId) {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active-section');
+                section.style.display = 'none';
+            });
+
+            const activeSection = document.getElementById(sectionId);
+            if (activeSection) {
+                activeSection.style.display = 'block';
+                activeSection.classList.add('active-section');
+            }
+
+            AOS.refresh();
+        }
+        function showProducts() {
+            // إخفاء واجهة الإضافة
+            document.getElementById('addProductSection').style.display = 'none';
+
+            // إظهار واجهة المنتجات
+            document.getElementById('products').style.display = 'block';
+
+            // تحديث الأنيميشنات
+            AOS.refresh();
+        }
+        // دالة عرض نموذج الإضافة
+        function showAddProduct() {
+            document.getElementById('addProductSection').classList.add('active');
+        }
+
+        // دالة إغلاق النموذج
+        function closeAddProduct() {
+            document.getElementById('addProductSection').classList.remove('active');
+        }
+
+        // دالة إضافة المنتج
+        function showAddProduct() {
+            // إخفاء قسم المنتجات
+            document.getElementById('products').style.display = 'none';
+            // إظهار قسم الإضافة
+            document.getElementById('addProductSection').style.display = 'block';
+            document.getElementById('addProductSection').classList.add('active');
+        }
+
+        function addProduct() {
+            document.getElementById('addProductSection').style.display = 'none';
+
+            // إظهار قسم المنتجات
+            const productsSection = document.getElementById('products');
+            productsSection.style.display = 'block';
+            productsSection.classList.add('active-section');
+
+            const inputs = document.querySelectorAll('#productForm input');
+            const tbody = document.querySelector('#products table tbody');
+            
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td><img src="placeholder.jpg" width="50"></td>
+                <td>${inputs[0].value}</td>
+                <td>$${parseFloat(inputs[1].value).toFixed(2)}</td>
+                <td>${inputs[2].value}</td>
+                <td>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-edit"></i> Edit
+                    </button>
+                    <button class="btn btn-success">
+                        <i class="fas fa-trash"></i> Delete
+                    </button>
+                </td>
+            `;
+            
+            tbody.appendChild(newRow);
+            showSection('products');
+            document.getElementById('productForm').reset();
+        }
+
+function closeAddForm() {
+    // إخفاء نموذج الإضافة
+    document.getElementById('addProductSection').style.display = 'none';
+    
+    // إظهار قسم المنتجات الرئيسي
+    document.getElementById('products').style.display = 'block';
+    
+    // تحديث الرسوم المتحركة
+    if(typeof AOS !== 'undefined') AOS.refresh();
+}
+
+function showAddForm() {
+    // إخفاء القسم الرئيسي
+    document.getElementById('products').style.display = 'none';
+    
+    // إظهار نموذج الإضافة
+    document.getElementById('addProductSection').style.display = 'block';
+}
+
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        function showAddProduct() {
+            // إخفاء قسم المنتجات
+            document.getElementById('products').style.display = 'none';
+            // إظهار قسم الإضافة
+            document.getElementById('addProductSection').style.display = 'block';
+            document.getElementById('addProductSection').classList.add('active');
+        }
+
+
+        // إغلاق القائمة عند النقر خارجها على الجوال
+        document.addEventListener('click', function (e) {
+            if (window.innerWidth <= 768 &&
+                !document.querySelector('.sidebar').contains(e.target) &&
+                !document.querySelector('.mobile-menu-btn').contains(e.target)) {
+                document.querySelector('.sidebar').classList.remove('active');
+            }
+        });
+
+        AOS.init({
+            duration: 800,
+            once: false
+        });
+
+
+        document.addEventListener('click', function(event) {
+    if (event.target.closest('.delete-btn')) {
+        const button = event.target.closest('.delete-btn');
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "We will not initiate a recall of this product!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'yes, delete',
+            cancelButtonText: 'Cancel',
+            customClass: {
+                confirmButton: 'swal2-English',
+                cancelButton: 'swal2-English'
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const row = button.closest('tr');
+                row.remove();
+                Swal.fire(
+                    'Deleted!',
+                    'The product was successfully deleted.',
+                    'success'
+                );
+            }
+        });
+    }
+});
+    </script>
+</body>
+
+</html>
