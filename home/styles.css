@@ -1,4 +1,4 @@
-/* Global Rules */
+/* Global Rules
 :root {
     --main-color: #fc8aa8;
     --pink: #fa8cc1;
@@ -1103,4 +1103,4 @@ section {
     .review-card p { font-size: 1.3em; }
     .user-info h3 { font-size: 1.7em; }
     .user-info span { font-size: 1.1em; }
-}
+} 
